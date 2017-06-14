@@ -1,0 +1,208 @@
+	/**
+	 * Gets the id tipo aggiornamento.
+	 *
+	 * @return the id tipo aggiornamento
+	 */
+	public CmTipoAggiornamento getIdTipoAggiornamento() {
+		return idTipoAggiornamento;
+	}
+
+	/**
+	 * Sets the id tipo aggiornamento.
+	 *
+	 * @param idTipoAggiornamento
+	 *            the new id tipo aggiornamento
+	 */
+	public void setIdTipoAggiornamento(CmTipoAggiornamento idTipoAggiornamento) {
+		this.idTipoAggiornamento = idTipoAggiornamento;
+	}
+
+	/**
+	 * Gets the id tipo organo collegiale.
+	 *
+	 * @return the id tipo organo collegiale
+	 */
+	public CmTipoOrganoCollegiale getIdTipoOrganoCollegiale() {
+		return idTipoOrganoCollegiale;
+	}
+
+	/**
+	 * Sets the id tipo organo collegiale.
+	 *
+	 * @param idTipoOrganoCollegiale
+	 *            the new id tipo organo collegiale
+	 */
+	public void setIdTipoOrganoCollegiale(CmTipoOrganoCollegiale idTipoOrganoCollegiale) {
+		this.idTipoOrganoCollegiale = idTipoOrganoCollegiale;
+	}
+
+	/**
+	 * Gets the id ufficio.
+	 *
+	 * @return the id ufficio
+	 */
+	public CmUffici getIdUfficio() {
+		return idUfficio;
+	}
+
+	/**
+	 * Sets the id ufficio.
+	 *
+	 * @param idUfficio
+	 *            the new id ufficio
+	 */
+	public void setIdUfficio(CmUffici idUfficio) {
+		this.idUfficio = idUfficio;
+	}
+
+	/**
+	 * Gets the id utente.
+	 *
+	 * @return the id utente
+	 */
+	public UteUtente getIdUtente() {
+		return idUtente;
+	}
+
+	/**
+	 * Sets the id utente.
+	 *
+	 * @param idUtente
+	 *            the new id utente
+	 */
+	public void setIdUtente(UteUtente idUtente) {
+		this.idUtente = idUtente;
+	}
+
+	/**
+	 * Gets the profili.
+	 *
+	 * @return the profili
+	 */
+	public String getProfili() {
+		return profili;
+	}
+
+	/**
+	 * Sets the profili.
+	 *
+	 * @param profili
+	 *            the new profili
+	 */
+	public void setProfili(String profili) {
+		this.profili = profili;
+	}
+
+	/**
+	 * Gets the flag processato.
+	 *
+	 * @return the flag processato
+	 */
+	public Integer getFlagProcessato() {
+		return flagProcessato;
+	}
+
+	/**
+	 * Sets the flag processato.
+	 *
+	 * @param flagProcessato
+	 *            the new flag processato
+	 */
+	public void setFlagProcessato(Integer flagProcessato) {
+		this.flagProcessato = flagProcessato;
+	}
+
+	/**
+	 * Gets the data inserimento.
+	 *
+	 * @return the data inserimento
+	 */
+	public Calendar getDataInserimento() {
+		return dataInserimento;
+	}
+
+	/**
+	 * Sets the data inserimento.
+	 *
+	 * @param dataInserimento
+	 *            the new data inserimento
+	 */
+	public void setDataInserimento(Calendar dataInserimento) {
+		this.dataInserimento = dataInserimento;
+	}
+
+	/**
+	 * Gets the flag valido.
+	 *
+	 * @return the flag valido
+	 */
+	public Integer getFlagValido() {
+		return flagValido;
+	}
+
+	/**
+	 * Sets the flag valido.
+	 *
+	 * @param flagValido
+	 *            the new flag valido
+	 */
+	public void setFlagValido(Integer flagValido) {
+		this.flagValido = flagValido;
+	}
+
+	/**
+	 * Gets the utente.
+	 *
+	 * @return the utente
+	 */
+	public String getUtente() {
+		return utente;
+	}
+
+	/**
+	 * Sets the utente.
+	 *
+	 * @param utente
+	 *            the new utente
+	 */
+	public void setUtente(String utente) {
+		this.utente = utente;
+	}
+
+	/**
+	 * Gets the data inizio incarico.
+	 *
+	 * @return the data inizio incarico
+	 */
+	public Calendar getDataInizioIncarico() {
+		return dataInizioIncarico;
+	}
+
+	/**
+	 * Sets the data inizio incarico.
+	 *
+	 * @param dataInizioIncarico
+	 *            the new data inizio incarico
+	 */
+	public void setDataInizioIncarico(Calendar dataInizioIncarico) {
+		this.dataInizioIncarico = dataInizioIncarico;
+	}
+
+	/**
+	 * Gets the data ultima modifica.
+	 *
+	 * @return the data ultima modifica
+	 */
+	public Calendar getDataUltimaModifica() {
+		return dataUltimaModifica;
+	}
+
+	/**
+	 * Sets the data ultima modifica.
+	 *
+	 * @param dataUltimaModifica
+	 *            the new data ultima modifica
+	 */
+	public void setDataUltimaModifica(Calendar dataUltimaModifica) {
+		this.dataUltimaModifica = dataUltimaModifica;
+	}
