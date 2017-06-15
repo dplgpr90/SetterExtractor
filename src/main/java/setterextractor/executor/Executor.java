@@ -6,12 +6,14 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Executor {
 
-	public void execute(String inputFile, String outputFile) {
+	public void execute(String inputFile, String outputFile, String objectName) {
 		BufferedReader reader = null;
 		try {
 			reader = new BufferedReader(new FileReader(inputFile));
@@ -55,7 +57,7 @@ public class Executor {
 
 		String inputText = sb.toString();
 
-		String stringaOutput = processString(inputText);
+		String stringaOutput = processString(inputText, objectName);
 
 		try {
 			writer.write(stringaOutput);
@@ -73,7 +75,7 @@ public class Executor {
 		System.out.println("CONVERTER SUCCESS!");
 	}
 
-	private String processString(String inputText) {
+	private String processString(String inputText, String objectName) {
 		String output = "";
 
 		String REGEX = "(?:(?:public)|(?:private)|(?:static)|(?:protected))(.)+(?:set)(.)+\n";
@@ -87,9 +89,51 @@ public class Executor {
 			output += inputText.substring(m.start(), m.end()) + "\n";
 		}
 
-		output = output.replaceAll("public void ", "object.").replaceAll("[{]", ";").replaceAll("\\((.)*\\)", "(parameter)").replaceAll("\n\n", "\n").replaceAll(" ;", ";");
+		output = output.replaceAll("public void ", objectName + ".").replaceAll("[{]", ";")
+				/* .replaceAll("\\((.)*\\)", "(parameters)") */.replaceAll("\n\n", "\n").replaceAll(" ;", ";");
 
-		return output;
+		String REGEX_PARAMS = "\\((.)*\\)";
+
+		Pattern p_params = Pattern.compile(REGEX_PARAMS);
+
+		// get a matcher object
+		Matcher m_params = p_params.matcher(output);
+		
+		String newOutput = output;
+		
+		while (m_params.find()) {
+			
+			String params = output.substring(m_params.start()+1, m_params.end()-1);
+
+			String[] paramsArray = params.split(",");
+
+			if (paramsArray != null && paramsArray.length > 0) {
+				List<String> names = new ArrayList<String>();
+				for (String param : paramsArray) {
+					String name = null;
+					String[] els = param.trim().split(" ");
+					if (els != null && els.length > 0) {
+						name = els[els.length - 1];
+						names.add(name);
+					}
+					
+				}
+				
+				if (names != null && !names.isEmpty()) {
+					String paramsNames = "";
+					for (String string : names) {
+						paramsNames += string + ", ";
+					}
+					paramsNames = paramsNames.substring(0, paramsNames.length() - 2);
+					
+					
+					newOutput = newOutput.replace(params, paramsNames);
+				}
+			}
+
+		}
+
+		return newOutput;
 
 	}
 

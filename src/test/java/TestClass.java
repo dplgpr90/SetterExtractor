@@ -17,9 +17,11 @@ public class TestClass {
 	/** The output file. */
 	private static final String outputFile = testResourcePath + "converted_" + Calendar.getInstance().getTimeInMillis()
 			+ ".txt";
+	
+	private static final String objectName = "OBJ";
 
 	public static void main(String[] args) {
 		Executor e = new Executor();
-		e.execute(inputFile, outputFile);
+		e.execute(inputFile, outputFile, objectName);
 	}
 }
