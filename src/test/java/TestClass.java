@@ -15,10 +15,10 @@ public class TestClass {
 	private static final String inputFile = testResourcePath + "input.txt";
 
 	/** The output file. */
-	private static final String outputFile = testResourcePath + "converted_" + Calendar.getInstance().getTimeInMillis()
+	private static final String outputFile = testResourcePath + "converted_" + Calendar.getInstance().getTime().toString().replace(" ", "_").replace(":", "_") + Calendar.getInstance().getTimeInMillis()
 			+ ".txt";
 	
-	private static final String objectName = "OBJ";
+	private static final String objectName = "param";
 
 	public static void main(String[] args) {
 		Executor e = new Executor();
